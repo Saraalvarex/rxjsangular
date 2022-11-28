@@ -1,0 +1,93 @@
+<!-- <div style="margin: 0 auto;">
+    <table *ngIf="productos" class="table">
+      <thead>
+        <tr>
+          <th scope="col" colspan="5">Categoría: {{productos[0][0].category}}</th>
+          <th scope="col" colspan="5">Categoría: {{productos[1][1].category}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td *ngFor="let product of productos[0]"><img src="{{product.image}}"/></td>
+          <td></td>
+          <td *ngFor="let product of productos[1]"><br><img src="{{product.image}}"/></td>
+        </tr>
+      </tbody>
+    </table>
+  </div> -->
+  <img style="margin: 0 auto; width: 100%; height: 100%;" src="./../../../assets/images/load.gif" *ngIf="!user"/>
+<body>
+<!-- Control de errores -->
+<div *ngIf="user">
+<section class="vh-100">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <h1 style="text-align: center;">RxJS Multiples Observables</h1>
+      <div class="col col-lg-6 mb-4 mb-lg-0">
+        <div class="card mb-3" style="border-radius: .5rem; padding-right: 3em; padding-left: 3em;">
+          <div class="row g-0">
+            <div class="col-md-4 gradient-custom text-center text-white"
+              style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+              <img src="./../../../assets/images/user.jpg"
+                alt="Avatar" class="img-fluid my-5" style="width: 170px;" />
+
+                <button (click)="getDetallesProductosCarrito()"
+                class="btn btn-info">Ver detalles carrito 🛒</button>
+                <br/><br/>
+              </div>
+            <div class="col-md-8">
+              <div class="card-body p-4">
+                <h4>Perfil de usuario</h4>
+                <hr class="mt-0 mb-4">
+                <div class="row pt-1">
+                  <div class="col-6 mb-3">
+                    <h6>Nombre de usuario</h6>
+                    <p class="text-muted">{{user.username}}</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h6>Id de usuario</h6>
+                    <p class="text-muted">{{user.id}}</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h6>Email</h6>
+                    <p class="text-muted">{{user.email}}</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h6>Tlf</h6>
+                    <p class="text-muted">{{user.phone}}</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h6>Dirección</h6>
+                    <p class="text-muted">{{user.address.street}}, {{user.address.number}} </p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h6>Ciudad</h6>
+                    <p class="text-muted">{{user.address.city}}, {{user.address.zipcode}}</p>
+                  </div>
+                </div>
+                <hr class="mt-0 mb-4">
+                <!-- ngIf para el control de errores -->
+                <!-- <img src="./../../../assets/images/load.gif" *ngIf="carrito.products"/> -->
+                <div class="row pt-1">
+                  <div class="col-6 mb-3" *ngIf="carrito">
+                    <h6>Mi 🛒</h6>
+                    <p *ngFor="let product of carrito.products" class="text-muted">Id producto: {{product.productId}}</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h6>⭐Categorías de interes</h6>
+                    <div *ngIf="productos">
+                      <p class="text-muted">{{productos[0][0].category}}</p>
+                      <p class="text-muted">{{productos[1][1].category}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+</body>

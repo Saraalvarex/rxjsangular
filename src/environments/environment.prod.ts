@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  urlStarWars: "https://swapi.dev/api/",
+  urlFakeStore: "https://fakestoreapi.com/"
 };

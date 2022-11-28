@@ -1,23 +1,7 @@
-<!-- <div style="margin: 0 auto;">
-    <table *ngIf="productos" class="table">
-      <thead>
-        <tr>
-          <th scope="col" colspan="5">Categoría: {{productos[0][0].category}}</th>
-          <th scope="col" colspan="5">Categoría: {{productos[1][1].category}}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td *ngFor="let product of productos[0]"><img src="{{product.image}}"/></td>
-          <td></td>
-          <td *ngFor="let product of productos[1]"><br><img src="{{product.image}}"/></td>
-        </tr>
-      </tbody>
-    </table>
-  </div> -->
+<!-- Control de errores, loading -->
   <img style="margin: 0 auto; width: 100%; height: 100%;" src="./../../../assets/images/load.gif" *ngIf="!user"/>
 <body>
-<!-- Control de errores -->
+
 <div *ngIf="user">
 <section class="vh-100">
   <div class="container py-5 h-100">
@@ -30,7 +14,7 @@
               style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
               <img src="./../../../assets/images/user.jpg"
                 alt="Avatar" class="img-fluid my-5" style="width: 170px;" />
-
+<!------------------- Ver detalles productos del carrito ------------------->
                 <button (click)="getDetallesProductosCarrito()"
                 class="btn btn-info">Ver detalles carrito 🛒</button>
                 <br/><br/>
@@ -66,9 +50,8 @@
                   </div>
                 </div>
                 <hr class="mt-0 mb-4">
-                <!-- ngIf para el control de errores -->
-                <!-- <img src="./../../../assets/images/load.gif" *ngIf="carrito.products"/> -->
                 <div class="row pt-1">
+                  <!-- Controld de errores -->
                   <div class="col-6 mb-3" *ngIf="carrito">
                     <h6>Mi 🛒</h6>
                     <p *ngFor="let product of carrito.products" class="text-muted">Id producto: {{product.productId}}</p>

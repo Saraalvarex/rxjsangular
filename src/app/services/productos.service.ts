@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { map, from, Observable, switchMap, concatMap, mergeMap, exhaustMap } from "rxjs";
+import { from, Observable, switchMap, concatMap, mergeMap } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { environment } from "src/environments/environment";
 
@@ -29,8 +29,6 @@ export class ProductosService {
         //podemos usar mergeMap o concatMap
         mergeMap((id) =>
            <Observable<any>> this._http.get(environment.urlFakeStore+'products/' + id))
-        // exhaustMap((id) =>
-        //    <Observable<any>> this._http.get(environment.urlFakeStore+'carts?userId=' + id))
       )
     }
 
